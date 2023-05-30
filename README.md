@@ -1,5 +1,8 @@
 #  BestKotlinProjectGithub
 # Introdução 
+Fazer um aplicativo que consuma API do Github.
+
+# O que o aplicativo faz?
 Criar um app para consultar a API do Github e trazer os repositórios com mais estrelas em
 Kotlin, que contenha:
 - Lista de Repositórios
@@ -15,11 +18,8 @@ Seria legal se tivesse:
 - Testes de UI usando Espresso
 - Rx ou Coroutines
 - Cache de imagens e da API
-- Suportar mudanças de orientação das telas sem perder o estad
+- Suportar mudanças de orientação das telas sem perder o estado
 
-
-# O que o aplicativo faz?
- Além da listagem dos repositóriso do seu usuãrio vocẽ também podia consultar e listar os repositórios de algum usuário do Github.
 
 # O que foi usado na construção do Aplicativo?
 - Kotlin
@@ -34,5 +34,3 @@ Seria legal se tivesse:
 - Coroutines
 - Injeção de Dependência via Koin
 - Padrões de projeto como Repository com utilização de Interface
-
-
