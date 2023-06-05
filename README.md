@@ -12,6 +12,7 @@ chamada: https://api.github.com/search/repositories?q=language:kotlin&sort=stars
 - Exibir nome do repo, quantidade de estrelas, quantidade de fork, foto e nome do autor ✔️
 - Scroll infinito ✔️
 - Testes unitários ❌
+
 Seria legal se tivesse:
 - Kotlin ✔️
 - Android Architecture Components(Paging, ViewModel e etc.) ✔️
