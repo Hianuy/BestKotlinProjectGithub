@@ -33,7 +33,7 @@ Exemplo de chamada -> https://api.github.com/search/repositories?q=language:kotl
 - Glide para carregamento de imagens
 - ViewBinding
 - Paging
-- MVVM + CLEAN ARCHITECTURE 
+- MVVM 
 - Coroutines
 - Injeção de Dependência via Koin
 - Padrões de projeto como Repository com utilização de Interface
