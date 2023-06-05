@@ -1,4 +1,4 @@
-package com.example.bestkotlinprojectgithub
+package com.example.bestkotlinprojectgithub.di
 
 import android.app.Application
 import com.example.bestkotlinprojectgithub.di.DataModule

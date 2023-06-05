@@ -17,5 +17,4 @@ object PresentationModule {
             viewModel { MainViewModel(get()) }
         }
     }
-
 }

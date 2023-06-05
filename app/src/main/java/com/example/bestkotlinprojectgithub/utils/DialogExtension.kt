@@ -1,25 +1,11 @@
 package com.example.bestkotlinprojectgithub.utils
 
-import android.app.Activity
 import android.content.Context
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.ProgressBar
 import androidx.appcompat.app.AlertDialog
 import com.example.bestkotlinprojectgithub.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputLayout
 
-var TextInputLayout.text: String
-    get() = editText?.text?.toString() ?: ""
-    set(value) {
-        editText?.setText(value)
-    }
-
-fun View.hideSoftKeyboard() {
-    val imm = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.hideSoftInputFromWindow(windowToken, 0)
-}
 
 fun Context.createDialog(block: MaterialAlertDialogBuilder.() -> Unit = {}): AlertDialog {
     val builder = MaterialAlertDialogBuilder(this)
@@ -30,7 +16,7 @@ fun Context.createDialog(block: MaterialAlertDialogBuilder.() -> Unit = {}): Ale
 
 fun Context.createProgressDialog(): AlertDialog {
     return createDialog {
-        val padding = this@createProgressDialog.resources.getDimensionPixelOffset(R.dimen.layout_padding)
+        val padding = this@createProgressDialog.resources.getDimensionPixelOffset(R.dimen.spacing_sm)
         val progressBar = ProgressBar(this@createProgressDialog)
         progressBar.setPadding(padding, padding, padding, padding)
         setView(progressBar)

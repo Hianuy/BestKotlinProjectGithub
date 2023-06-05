@@ -1,8 +1,7 @@
-package com.example.bestkotlinprojectgithub.presentation
+package com.example.bestkotlinprojectgithub.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.bestkotlinprojectgithub.data.GitHubServiceApi
 import com.example.bestkotlinprojectgithub.model.Item
 import java.lang.Exception
 
@@ -23,12 +22,15 @@ class PagingDataSource(private val githubApi: GitHubServiceApi): PagingSource<In
 
             return LoadResult.Page(
                 data = response.items,
-                prevKey = if (position == 1) null else position - 1,
-                nextKey = if (position == 1151864) null else position + 1
+                prevKey = if (position == INIT_PAGE) null else position - 1,
+                nextKey = if (position == LAST_PAGE) null else position + 1
             )
         } catch (e: Exception) {
             LoadResult.Error(e)
         }
     }
-
+    private companion object{
+        const val INIT_PAGE = 1
+        const val LAST_PAGE = 1151864
+    }
 }

@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="layout_padding">16dp</dimen>
+    <!-- PATTERN OF SIZE FONT AND SPACING -->
+
+    <!-- Spacing size -->
+    <dimen name="spacing_none">0dp</dimen>
+    <dimen name="spacing_nano">4dp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_sm">16dp</dimen>
+    <dimen name="spacing_smedium">20dp</dimen>
+    <!-- Font size -->
+    <dimen name="font_xs">8sp</dimen>
+    <dimen name="font_xsm">14sp</dimen>
+    <dimen name="font_sm">16sp</dimen>
+
+    <dimen name="image_size">90dp</dimen>
 </resources>

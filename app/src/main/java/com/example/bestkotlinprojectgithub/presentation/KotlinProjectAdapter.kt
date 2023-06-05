@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bestkotlinprojectgithub.R
 import com.example.bestkotlinprojectgithub.model.Item

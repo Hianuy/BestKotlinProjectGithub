@@ -1,11 +1,8 @@
 package com.example.bestkotlinprojectgithub.model
 
-
 data class RepositoryResponse(
     val items: List<Item>
 )
-
-
 data class Item(
     val id: Long,
     val name: String,

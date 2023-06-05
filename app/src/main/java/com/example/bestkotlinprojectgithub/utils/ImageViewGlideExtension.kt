@@ -1,10 +1,7 @@
 package com.example.bestkotlinprojectgithub.utils
 
-import android.content.Context
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
-import android.widget.ProgressBar
-import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.model.GlideUrl

@@ -2,7 +2,6 @@ package com.example.bestkotlinprojectgithub.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.example.bestkotlinprojectgithub.databinding.ActivityMainBinding
 import com.example.bestkotlinprojectgithub.utils.createDialog
 import com.example.bestkotlinprojectgithub.utils.createProgressDialog
@@ -21,9 +20,21 @@ class MainActivity : AppCompatActivity()  {
         viewModel.initViewModelGetRepositories()
 
         binding.recyclerView.adapter = kotlinAdapter
-        viewModel.list.observe(this, Observer {
-            kotlinAdapter.submitData(lifecycle, it)
-        })
 
+        viewModel.list.observe(this) {
+            when (it) {
+                MainViewModel.State.Loading -> dialog.show()
+                is MainViewModel.State.Error -> {
+                    createDialog {
+                        setMessage(it.error.message)
+                    }.show()
+                    dialog.dismiss()
+                }
+                is MainViewModel.State.Success -> {
+                    dialog.dismiss()
+                    kotlinAdapter.submitData(lifecycle, it.list)
+                }
+            }
+        }
     }
 }
