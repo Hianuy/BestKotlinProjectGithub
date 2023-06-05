@@ -39,5 +39,8 @@ Exemplo de chamada -> https://api.github.com/search/repositories?q=language:kotl
 - Padrões de projeto como Repository com utilização de Interface
 
 
+# Demostrativo?
+
+
 https://github.com/Hianuy/BestKotlinProjectGithub/assets/30296650/6e7e24d5-8ff1-46df-8a22-6ca0b8ca6efe
 
