@@ -1,9 +1,9 @@
 #  BestKotlinProjectGithub
 # Introdução 
-Fazer um aplicativo que consuma API do Github.
+Criar um app para consultar a API do Github e trazer alguns dados.
 
 # O que o aplicativo faz?
-Criar um app para consultar a API do Github e trazer os repositórios com mais estrelas em
+O app precisa consultar a API do Github e trazer os repositórios com mais estrelas em
 Kotlin, que contenha:
 - Lista de Repositórios
 - exemplo de
