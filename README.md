@@ -9,12 +9,12 @@ Kotlin, que contenha:
 - exemplo de
 chamada: https://api.github.com/search/repositories?q=language:kotlin&sort=stars&page
 =1
-- Exibir nome do repo, quantidade de estrelas, quantidade de fork, foto e nome do autor
+- Exibir nome do repo, quantidade de estrelas, quantidade de fork, foto e nome do autor ✔️
 - Scroll infinito ✔️
 - Testes unitários ❌
 Seria legal se tivesse:
 - Kotlin ✔️
-- Android Architecture Components ✔️
+- Android Architecture Components(Paging, ViewModel e etc.) ✔️
 - Testes de UI usando Espresso ❌
 - Rx ou Coroutines ✔️
 - Cache de imagens e da API(Incompleto cache de API) ✔️
