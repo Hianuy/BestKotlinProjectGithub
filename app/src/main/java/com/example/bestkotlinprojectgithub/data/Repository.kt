@@ -12,5 +12,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
-    fun getKotlinProject(): LiveData<PagingData<Item>>
+    suspend fun getKotlinProject(): LiveData<PagingData<Item>>
 }

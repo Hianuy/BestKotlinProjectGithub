@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        viewModel.initViewModelGetRepositories()
 
         binding.recyclerView.adapter = kotlinAdapter
         viewModel.list.observe(this, Observer {
             kotlinAdapter.submitData(lifecycle, it)
-
         })
 
     }
