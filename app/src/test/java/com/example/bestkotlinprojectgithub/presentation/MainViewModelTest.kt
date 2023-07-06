@@ -50,16 +50,11 @@ import java.lang.Exception
 @OptIn(ExperimentalCoroutinesApi::class)
 class MainViewModelTest {
 
-    // Subject under test
     @get:Rule
     var instantExecutorRule = MainDispatcherRule()
 
     // Cria um despachante de teste para executar corrotinas de maneira síncrona
     private val dispatcher: TestDispatcher = UnconfinedTestDispatcher()
-
-    // Cria um escopo de corrotina de teste
-
-
 
     private val userCase: ListUserRepositoryUseCase = mockk()
 
@@ -117,35 +112,3 @@ class MainDispatcherRule(
     }
 }
 
-@VisibleForTesting(otherwise = VisibleForTesting.NONE)
-fun <T> LiveData<T>.getOrAwaitValue(
-    time: Long = 2,
-    timeUnit: TimeUnit = TimeUnit.SECONDS,
-    afterObserve: () -> Unit = {}
-): T {
-    var data: T? = null
-    val latch = CountDownLatch(1)
-    val observer = object : Observer<T> {
-        override fun onChanged(o: T?) {
-            data = o
-            latch.countDown()
-            this@getOrAwaitValue.removeObserver(this)
-        }
-    }
-    this.observeForever(observer)
-
-    try {
-        afterObserve.invoke()
-
-        // Don't wait indefinitely if the LiveData is not set.
-        if (!latch.await(time, timeUnit)) {
-            throw TimeoutException("LiveData value was never set.")
-        }
-
-    } finally {
-        this.removeObserver(observer)
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    return data as T
-}
