@@ -2,6 +2,7 @@ package com.example.bestkotlinprojectgithub.di
 
 import android.util.Log
 import com.example.bestkotlinprojectgithub.data.GitHubServiceApi
+import com.example.bestkotlinprojectgithub.data.ListUserRepositoryUseCase
 import com.example.bestkotlinprojectgithub.data.Repository
 import com.example.bestkotlinprojectgithub.data.RepositoryImpl
 import com.example.bestkotlinprojectgithub.utils.NetWorkUtils
@@ -21,7 +22,7 @@ object DataModule {
     private const val OK_HTTP = "OkHttp"
 
     fun load() {
-        loadKoinModules(networkModules() + repositoriesModule())
+        loadKoinModules(networkModules() + repositoriesModule() + useCaseModule())
     }
 
     private fun networkModules(): Module {
@@ -60,6 +61,13 @@ object DataModule {
     private fun repositoriesModule(): Module {
         return module {
             single<Repository> { RepositoryImpl(get()) }
+        }
+
+
+    }
+    private fun useCaseModule(): Module {
+        return module {
+            factory { ListUserRepositoryUseCase(get()) }
         }
     }
 

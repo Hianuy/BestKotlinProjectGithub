@@ -5,20 +5,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
-import androidx.paging.cachedIn
-import com.example.bestkotlinprojectgithub.data.Repository
+import com.example.bestkotlinprojectgithub.data.ListUserRepositoryUseCase
 import com.example.bestkotlinprojectgithub.model.Item
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: Repository) : ViewModel() {
+class MainViewModel(private val userCase: ListUserRepositoryUseCase) : ViewModel() {
 
     private val _list = MutableLiveData<State>()
      val list: LiveData<State> = _list
 
     fun initViewModelGetRepositories() = viewModelScope.launch {
-        repository.getKotlinProject().cachedIn(viewModelScope)
+        userCase.execute("")
             .onStart {
                 _list.postValue(State.Loading)
             }
